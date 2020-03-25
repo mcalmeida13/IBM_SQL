@@ -1,0 +1,48 @@
+# Drop the existing table
+drop table INSTRUCTOR
+;
+
+#Create a table instructor
+create table INSTRUCTOR (
+	ins_id  integer PRIMARY KEY NOT NULL
+	, lastname varchar(15) NOT NULL
+	, firstname varchar(15) NOT NULL
+	, city varchar(15)
+	, country char(2)
+);
+
+# Insert values in the table
+INSERT INTO INSTRUCTOR
+  VALUES
+  (1, 'Carvalho', 'Manuela', 'Brasilia','BR'),
+  (2, 'Ahuja', 'Rav', 'Toronto', 'CA'),
+  (3, 'Vasudevan', 'Hima', 'Chicago', 'US'),
+  (4, 'Chong', 'Raul', 'Toronto', 'CA')
+  ;
+ 
+# Retrieve all the columns of the table 
+  SELECT * FROM Instructor;
+
+# Find the first, last name and country where city is Toronto
+  SELECT 
+  firstname
+  , lastname
+  , country
+  FROM INSTRUCTOR
+  WHERE city = 'Toronto'
+  ;
+# Update the city of the ins_id =1  
+ UPDATE INSTRUCTOR SET city='Markham' where ins_id=1
+;
+
+
+# Retrieve all the columns of the table to see the change
+  SELECT * FROM Instructor;
+  
+# Delete entry where ins_id =2  
+  DELETE FROM INSTRUCTOR where ins_id=2
+;
+
+# Retrieve all the columns of the table to see the change
+ SELECT * FROM Instructor;
+ 
